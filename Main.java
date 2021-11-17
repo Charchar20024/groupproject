@@ -1,13 +1,5 @@
 import java.util.Scanner;
 
-/**
- * 
- */
-
-/**
- * @author stephanie
- *
- */
 public class Main extends FileHandler {
 	public static void main(String[] args) {
 		 //takes user input
