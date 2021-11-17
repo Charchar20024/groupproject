@@ -1,5 +1,4 @@
 public class GroupProject {
-  public static void main(String [] args){
     	    public static String encode(String str) {
 	        String result = " " ;
 	        
@@ -21,7 +20,26 @@ public class GroupProject {
 	    public static String decode(String str) {
 	        return encode(str); // Encode could be used for decode
 	    }
-    
+    		
+	 public static void main(String[] args) {
+	        Scanner input = new Scanner(System.in) ; // Scanner to collect user input
+	        System.out.print( " 1) I want to ENCODE a message OR 2) I want to DECODE a message. Please enter your choice : " ) ; 
+	        // Line above prints the choice message so user can decide to encode or decode
+	        int choice = input.nextInt() ; 
+	        // After user input is taken, the command chosen will run
+	        input.nextLine() ; 
+	        if(choice == 1) { // Runs the encode command if user inputed 1
+	            System.out.print(" Enter message you wish to encode : " ) ;
+	            String line = input.nextLine();
+	            System.out.println(" Encoded message is : " + encode(line)) ;
+	        } else if(choice == 2) { // Runs the decode command if user inputed 2
+	            System.out.print(" Enter message you with to decode : ") ;
+	            String line = input.nextLine() ; 
+	            System.out.println(" Decoded message is : " + decode(line)) ;
+	            input.close(); // Closes the scanner for user input
+	        }
+	    }
   }
   
 }
+
