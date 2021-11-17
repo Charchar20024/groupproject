@@ -1,3 +1,4 @@
+import java.util.Scanner; // This import in necessary to create the scanner that gets user input
 public class GroupProject {
     	    public static String encode(String str) {
 	        String result = " " ;
