@@ -1,0 +1,78 @@
+package ciphercompetiton;
+
+
+import java.io.*;
+import java.io.File;
+import java.util.Scanner;
+
+public class CipherCompetiton {
+    
+ public static void writeToFile(String contents ) {
+    
+     File myFile = new File("encode.txt");
+   
+     try(PrintWriter pw = new PrintWriter(myFile)) {
+         pw.println(contents);
+         
+     }catch(IOException e){
+        System.out.print(e.getMessage());
+     }
+     
+ }
+ 
+ public static String encode(String str) {
+	        String result = " " ;
+	        
+	        // The following loop is what makes the encoding / decoding possible. 
+	        char variable ; 
+	        for(int i = 0 ; i < str.length() ; ++i) {
+	        	variable = str.charAt(i) ;
+	            if(Character.isLowerCase(variable)) { 
+	                result += (char)('a' + (25-variable+'a')) ; // Controls whether output letters will be lower case
+	            } else if(Character.isUpperCase(variable)) {
+	                result += (char)('A' + (25-variable+'A')) ; // Controls whether output letters will be upper case 
+	            } else {
+	                result += variable ;
+	            }
+	        }
+	        return result;
+	    }
+ public static String caesarEncode(String str){
+      
+ }
+ 
+ 
+ public static String decode(String str) {
+	        return encode(str); // Encode could be used for decode
+	    }
+    		
+	 public static void main(String[] args) {
+	    Scanner input = new Scanner(System.in) ; 
+
+	    System.out.print("Please enter the contents to write to the file: ");
+            
+            String write = input.next();
+            writeToFile(write);
+           
+            
+            //encode(reader);
+                
+                
+                
+                int choice = input.nextInt() ; 
+	        // After user input is taken, the command chosen will run
+	        
+                
+                input.nextLine() ; 
+	        if(choice == 1) { // Runs the encode command if user inputed 1
+	            System.out.print(" Enter message you wish to encode : " ) ;
+	            String line = input.nextLine();
+	            System.out.println(" Encoded message is : " + encode(line)) ;
+	        } else if(choice == 2) { // Runs the decode command if user inputed 2
+	            System.out.print(" Enter message you with to decode : ") ;
+	            String line = input.nextLine() ; 
+	            System.out.println(" Decoded message is : " + decode(line)) ;
+	            input.close(); // Closes the scanner for user input
+	        }
+	    }
+  }
