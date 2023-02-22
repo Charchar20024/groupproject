@@ -1,5 +1,5 @@
-# groupproject
+# Group Project
 Model Eliciting Activity (MEA) – Cipher Algorithm
 
 
-Stephanie : The code within the GroupProject class is the current cipher.
+The code within the GroupProject class is the current cipher.
